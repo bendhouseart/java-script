@@ -5,11 +5,11 @@
 
 #die1, #die2 {
 	margin: 10px;
-	border: solid black;
-	padding: 25px;
-	content: url(1.png);
+	border: solid white; 
+	padding: 1px;
+
 }
 
-die1.image {
-	content: url("1.png");
-	}
+
+
+

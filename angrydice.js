@@ -44,37 +44,49 @@ function checkRound() {
 	
 function die (id) {
 	this.id = id;
-	this.image =0;
+	this.value = 1;	
 	this.held = false;
 	this.setVal = function () {
 		if (!this.held) {
-			this.val = Math.floor(Math.random() * 6) + 1;
+			this.value = Math.floor(Math.random() * 6) + 1;
 			this.render();
 		}
-		switch (this.value) {
-			case 1:
-				//change button to one pip
-			case 2:
-				//change button to two pips
-			case 3:
-
-			case 4:
-
-			case 5:
-
-			case 6:
-		}
+			
 	}
 	this.render = function () {
-		document.getElementById(this.id).innerHTML = this.val.toString();
+		document.getElementById(this.id).innerHTML = this.value.toString();
 	}
+};
+
+var die1 = new die("die1");
+var die2 = new die("die2");
+
+function changeDicePic (die) {
+	console.log(die.value);
+	if (die.value == 1) {
+		document.getElementById(die.id).src = "1.png";
+	} else if (die.value == 2) {
+		document.getElementById(die.id).src = "2.png";
+	} else if (die.value == 3) {
+		document.getElementById(die.id).src = "angry.png";
+	} else if (die.value == 4) {
+		document.getElementById(die.id).src = "4.png";
+	} else if (die.value == 5) {
+		document.getElementById(die.id).src = "5.png";
+	} else if (die.value == 6) {
+		document.getElementById(die.id).src = "6.png";
+		}
 };
 
 document.getElementById('roll').addEventListener('click', function (e){
 	e.preventDefault();
 	die1.setVal();
 	die2.setVal();
+	changeDicePic(die1);
+	changeDicePic(die2);
 	checkRound();
+//	console.log(die1.val);
+//	console.log(die2.val);
 });
 
 document.getElementById('reset').addEventListener('click', function (e){
@@ -115,11 +127,6 @@ Array.from(dieDivs).forEach(function (element) {
 });
 
 
-var die1 = new die('die1');
-var die2 = new die('die2');
-die1.setVal();
-die2.setVal();
 
 
-console.log(die1);
-console.log(die2);
+
