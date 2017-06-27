@@ -23,19 +23,19 @@ function releaseHold () {
 }
 
 function checkRound() {
-	if (die1.val === die2.val && die1.val ===3) {
+	if (die1.value === die2.value && die1.value ===3) {
 		round = 1;
 		changeRound();
 		releaseHold();
-	} else if (round === 1 && die1.val + die2.val === 3) {
+	} else if (round === 1 && die1.value + die2.value === 3) {
 		round = 2;
 		changeRound();
 		releaseHold();
-	} else if (round === 2 && (Math.pow(die1.val, 2) + Math.pow(die2.val, 2) === 25)) {
+	} else if (round === 2 && (Math.pow(die1.value, 2) + Math.pow(die2.value, 2) === 25)) {
 		round = 3;
 		changeRound();
 		releaseHold();
-	} else if (round === 3 && die1.val + die2.val === 11) {
+	} else if (round === 3 && die1.value + die2.value === 11) {
 	   round = 'win';
 	   changeRound();
 	   releaseHold();
@@ -85,8 +85,8 @@ document.getElementById('roll').addEventListener('click', function (e){
 	changeDicePic(die1);
 	changeDicePic(die2);
 	checkRound();
-//	console.log(die1.val);
-//	console.log(die2.val);
+//	console.log(die1.value);
+//	console.log(die2.value);
 });
 
 document.getElementById('reset').addEventListener('click', function (e){
@@ -104,7 +104,7 @@ var dieDivs = document.getElementsByClassName('dieClick');
 Array.from(dieDivs).forEach(function (element) {
 	element.addEventListener('click', function () {
 		console.log(this.id);
-		if (this.id === 'die1' && !die1.held && !(this.val == 6)) {
+		if (this.id === 'die1' && !die1.held && !(this.value == 6)) {
 			if (die1.held !== 6 ) {
 			die1.held = true;
 			this.style.borderColor = 'red';
@@ -113,7 +113,7 @@ Array.from(dieDivs).forEach(function (element) {
 		  	die1.held = false;
 			this.style.borderColor = 'black';
 		} else if (this.id ==='die2' && !die2.held) {
-			if (die2.val !==6) {
+			if (die2.value !==6) {
 			die2.held = true
 			this.style.borderColor = 'red';
 			}
