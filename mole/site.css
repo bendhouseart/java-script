@@ -1,0 +1,10 @@
+body {
+	background-color: #a6c871;
+}
+
+.button {
+	background-image:  url("hole.jpg");
+	width: 103px;
+	height: 84px;
+}
+
