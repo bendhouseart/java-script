@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Weather Application</title>
-		<link href=weather.css type="text/css" rel="stylsheet">
+		<link href=weather.css type="text/css" rel="stylesheet">
 	</head>	
 	<body>
 		<h1>Your Local Weather</h1>
@@ -16,7 +16,18 @@
 		<div id="weather-returned">
 		</div>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="weather.js"></script>	
+
+		<!-- Here we will place the current conditions for our area -->
+		<div id='currentConditions'>
+			<div id="location"></div>	
+			<div id="temperature">dummy text</div>
+			<div id="humidity"></div>
+			<div id="windVector"></div>
+			<div id="windSpeed"></div>
+			<div id="cloudCover"></div>
+			<div id="conditions"></div>
+		</div>
 	</body>
+	<script src="weather.js"></script>
 </html>
 
